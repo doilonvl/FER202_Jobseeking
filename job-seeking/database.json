@@ -1,0 +1,735 @@
+{
+  "Users": [
+    {
+      "id": 1,
+      "username": "john_doe",
+      "password": "password123",
+      "email": "john.doe@example.com",
+      "roleId": 1
+    },
+    {
+      "id": 2,
+      "username": "jane_smith",
+      "password": "secretword",
+      "email": "jane.smith@example.com",
+      "roleId": 2
+    },
+    {
+      "id": 3,
+      "username": "mike_jones",
+      "password": "mikepass",
+      "email": "mike.jones@example.com",
+      "roleId": 1
+    },
+    {
+      "id": "4",
+      "username": "emily_brown",
+      "password": "emilypass",
+      "email": "emily.brown@example.com",
+      "roleId": 2
+    },
+    {
+      "id": 5,
+      "username": "chris_wilson",
+      "password": "chrispass",
+      "email": "chris.wilson@example.com",
+      "roleId": 3
+    },
+    {
+      "id": 6,
+      "username": "sara_clark",
+      "password": "sarapass",
+      "email": "sara.clark@example.com",
+      "roleId": 3
+    },
+    {
+      "id": 7,
+      "username": "adam_miller",
+      "password": "adampass",
+      "email": "adam.miller@example.com",
+      "roleId": 3
+    },
+    {
+      "username": "qwe",
+      "password": "123123qwe",
+      "email": "cafeomcua22@gmail.com",
+      "roleId": 3,
+      "id": 8
+    },
+    {
+      "username": "qweqwe",
+      "password": "123wqeqweqw",
+      "email": "doilonvl@gmail.com",
+      "roleId": 3,
+      "id": 9
+    }
+  ],
+  "Roles": [
+    {
+      "id": 1,
+      "roleName": "Admin"
+    },
+    {
+      "id": 2,
+      "roleName": "Job Recruitment"
+    },
+    {
+      "id": 3,
+      "roleName": "User"
+    }
+  ],
+  "Jobs": [
+    {
+      "id": 1,
+      "title": "Software Engineer",
+      "location": "San Francisco",
+      "industry": "Technology",
+      "skills": "Java, Python, SQL",
+      "jobType": "Full-time",
+      "salaryRange": "$80,000 - $100,000",
+      "requiredExperience": 3
+    },
+    {
+      "id": 2,
+      "title": "Marketing Specialist",
+      "location": "New York",
+      "industry": "Marketing",
+      "skills": "SEO, SEM, Social Media Marketing",
+      "jobType": "Full-time",
+      "salaryRange": "$60,000 - $80,000",
+      "requiredExperience": 2
+    },
+    {
+      "id": 3,
+      "title": "Graphic Designer",
+      "location": "Los Angeles",
+      "industry": "Design",
+      "skills": "Adobe Photoshop, Illustrator, UI/UX Design",
+      "jobType": "Part-time",
+      "salaryRange": "$40,000 - $60,000",
+      "requiredExperience": 1
+    },
+    {
+      "id": 4,
+      "title": "Data Analyst",
+      "location": "Chicago",
+      "industry": "Technology",
+      "skills": "Data Mining, Statistical Analysis, Excel",
+      "jobType": "Full-time",
+      "salaryRange": "$70,000 - $90,000",
+      "requiredExperience": 2
+    },
+    {
+      "id": 5,
+      "title": "Sales Representative",
+      "location": "Houston",
+      "industry": "Sales",
+      "skills": "Negotiation, Communication, Sales Strategy",
+      "jobType": "Full-time",
+      "salaryRange": "$50,000 - $70,000",
+      "requiredExperience": 1
+    },
+    {
+      "id": 6,
+      "title": "Human Resources Manager",
+      "location": "Dallas",
+      "industry": "Human Resources",
+      "skills": "Recruitment, Employee Relations, HR Policies",
+      "jobType": "Full-time",
+      "salaryRange": "$60,000 - $80,000",
+      "requiredExperience": 3
+    },
+    {
+      "id": 7,
+      "title": "Financial Analyst",
+      "location": "Boston",
+      "industry": "Finance",
+      "skills": "Financial Modeling, Forecasting, Accounting",
+      "jobType": "Full-time",
+      "salaryRange": "$70,000 - $90,000",
+      "requiredExperience": 2
+    },
+    {
+      "id": 8,
+      "title": "Customer Service Representative",
+      "location": "Seattle",
+      "industry": "Customer Service",
+      "skills": "Problem Solving, Communication, Patience",
+      "jobType": "Part-time",
+      "salaryRange": "$30,000 - $40,000",
+      "requiredExperience": 1
+    },
+    {
+      "id": 9,
+      "title": "Web Developer",
+      "location": "Austin",
+      "industry": "Technology",
+      "skills": "HTML, CSS, JavaScript",
+      "jobType": "Full-time",
+      "salaryRange": "$60,000 - $80,000",
+      "requiredExperience": 2
+    },
+    {
+      "id": 10,
+      "title": "Content Writer",
+      "location": "Miami",
+      "industry": "Writing",
+      "skills": "Creative Writing, SEO, Blogging",
+      "jobType": "Part-time",
+      "salaryRange": "$20,000 - $40,000",
+      "requiredExperience": 1
+    },
+    {
+      "id": 11,
+      "title": "Project Manager",
+      "location": "Atlanta",
+      "industry": "Management",
+      "skills": "Project Planning, Leadership, Time Management",
+      "jobType": "Full-time",
+      "salaryRange": "$80,000 - $100,000",
+      "requiredExperience": 3
+    },
+    {
+      "id": 12,
+      "title": "Legal Assistant",
+      "location": "Philadelphia",
+      "industry": "Legal",
+      "skills": "Legal Research, Documentation, Legal Writing",
+      "jobType": "Full-time",
+      "salaryRange": "$40,000 - $60,000",
+      "requiredExperience": 2
+    },
+    {
+      "id": 13,
+      "title": "UI/UX Designer",
+      "location": "Denver",
+      "industry": "Design",
+      "skills": "Wireframing, Prototyping, User Testing",
+      "jobType": "Full-time",
+      "salaryRange": "$70,000 - $90,000",
+      "requiredExperience": 3
+    },
+    {
+      "id": 14,
+      "title": "Operations Manager",
+      "location": "Phoenix",
+      "industry": "Management",
+      "skills": "Operations Management, Process Improvement, Budgeting",
+      "jobType": "Full-time",
+      "salaryRange": "$80,000 - $100,000",
+      "requiredExperience": 4
+    },
+    {
+      "id": 15,
+      "title": "Social Media Manager",
+      "location": "San Diego",
+      "industry": "Marketing",
+      "skills": "Content Strategy, Social Media Analytics, Community Management",
+      "jobType": "Full-time",
+      "salaryRange": "$50,000 - $70,000",
+      "requiredExperience": 2
+    },
+    {
+      "id": 16,
+      "title": "Network Administrator",
+      "location": "Detroit",
+      "industry": "Information Technology",
+      "skills": "Network Security, Troubleshooting, Network Configuration",
+      "jobType": "Full-time",
+      "salaryRange": "$60,000 - $80,000",
+      "requiredExperience": 3
+    },
+    {
+      "id": 17,
+      "title": "Event Coordinator",
+      "location": "Washington D.C.",
+      "industry": "Event Planning",
+      "skills": "Event Management, Vendor Coordination, Budget Management",
+      "jobType": "Full-time",
+      "salaryRange": "$40,000 - $60,000",
+      "requiredExperience": 2
+    },
+    {
+      "id": 18,
+      "title": "Medical Assistant",
+      "location": "Minneapolis",
+      "industry": "Healthcare",
+      "skills": "Patient Care, Medical Terminology, Medical Records Management",
+      "jobType": "Full-time",
+      "salaryRange": "$30,000 - $40,000",
+      "requiredExperience": 1
+    },
+    {
+      "id": 19,
+      "title": "Accountant",
+      "location": "Portland",
+      "industry": "Finance",
+      "skills": "Financial Reporting, Taxation, Audit",
+      "jobType": "Full-time",
+      "salaryRange": "$60,000 - $80,000",
+      "requiredExperience": 3
+    },
+    {
+      "id": 20,
+      "title": "Executive Assistant",
+      "location": "Las Vegas",
+      "industry": "Administration",
+      "skills": "Calendar Management, Travel Arrangements, Meeting Coordination",
+      "jobType": "Full-time",
+      "salaryRange": "$50,000 - $70,000",
+      "requiredExperience": 2
+    }
+  ],
+  "SavedJobs": [
+    {
+      "id": 1,
+      "jobId": 2
+    },
+    {
+      "id": 2,
+      "jobId": 3
+    },
+    {
+      "id": 3,
+      "jobId": 4
+    },
+    {
+      "id": 4,
+      "jobId": 5
+    },
+    {
+      "id": 5,
+      "jobId": 6
+    },
+    {
+      "id": 6,
+      "jobId": 7
+    },
+    {
+      "id": 7,
+      "jobId": 8
+    }
+  ],
+  "JobApplications": [
+    {
+      "id": 1,
+      "userId": 1,
+      "jobId": 5,
+      "applicationDate": "02/15/2024",
+      "status": "Pending"
+    },
+    {
+      "id": 2,
+      "userId": 2,
+      "jobId": 6,
+      "applicationDate": "02/18/2024",
+      "status": "Accepted"
+    },
+    {
+      "id": 3,
+      "userId": 3,
+      "jobId": 7,
+      "applicationDate": "02/20/2024",
+      "status": "Pending"
+    },
+    {
+      "id": 4,
+      "userId": 4,
+      "jobId": 8,
+      "applicationDate": "02/21/2024",
+      "status": "Rejected"
+    },
+    {
+      "id": 5,
+      "userId": 5,
+      "jobId": 9,
+      "applicationDate": "02/22/2024",
+      "status": "Pending"
+    },
+    {
+      "id": 6,
+      "userId": 6,
+      "jobId": 10,
+      "applicationDate": "02/23/2024",
+      "status": "Accepted"
+    },
+    {
+      "id": 7,
+      "userId": 7,
+      "jobId": 11,
+      "applicationDate": "02/24/2024",
+      "status": "Pending"
+    }
+  ],
+  "Notifications": [
+    {
+      "id": 1,
+      "userId": 1,
+      "notificationType": "Job Alert",
+      "message": "New job matching your skills available.",
+      "isRead": "0",
+      "notificationDate": "02/20/2024"
+    },
+    {
+      "id": 2,
+      "userId": 2,
+      "notificationType": "Application Status",
+      "message": "Your application for Software Engineer has been accepted.",
+      "isRead": "1",
+      "notificationDate": "02/21/2024"
+    },
+    {
+      "id": 3,
+      "userId": 3,
+      "notificationType": "Job Alert",
+      "message": "New job matching your skills available.",
+      "isRead": "0",
+      "notificationDate": "02/22/2024"
+    },
+    {
+      "id": 4,
+      "userId": 4,
+      "notificationType": "Application Status",
+      "message": "Your application for Data Analyst has been rejected.",
+      "isRead": "1",
+      "notificationDate": "02/23/2024"
+    },
+    {
+      "id": 5,
+      "userId": 5,
+      "notificationType": "Job Alert",
+      "message": "New job matching your skills available.",
+      "isRead": "0",
+      "notificationDate": "02/24/2024"
+    },
+    {
+      "id": 6,
+      "userId": 6,
+      "notificationType": "Application Status",
+      "message": "Your application for Marketing Specialist has been accepted.",
+      "isRead": "1",
+      "notificationDate": "02/25/2024"
+    },
+    {
+      "id": 7,
+      "userId": 7,
+      "notificationType": "Job Alert",
+      "message": "New job matching your skills available.",
+      "isRead": "0",
+      "notificationDate": "02/26/2024"
+    }
+  ],
+  "EmployerFeedback": [
+    {
+      "id": 1,
+      "userId": 1,
+      "employerId": 101,
+      "jobId": 3,
+      "rating": 4,
+      "feedbackText": "John was very creative and delivered exceptional designs.",
+      "feedbackDate": "02/16/2024"
+    },
+    {
+      "id": 2,
+      "userId": 2,
+      "employerId": 102,
+      "jobId": 1,
+      "rating": 5,
+      "feedbackText": "Jane demonstrated strong problem-solving skills and exceeded expectations.",
+      "feedbackDate": "02/19/2024"
+    },
+    {
+      "id": 3,
+      "userId": 3,
+      "employerId": 103,
+      "jobId": 2,
+      "rating": 3,
+      "feedbackText": "Mike was reliable but could improve on time management.",
+      "feedbackDate": "02/21/2024"
+    },
+    {
+      "id": 4,
+      "userId": 4,
+      "employerId": 104,
+      "jobId": 4,
+      "rating": 4,
+      "feedbackText": "Emily showed excellent analytical skills but lacked experience in a specific tool.",
+      "feedbackDate": "02/24/2024"
+    },
+    {
+      "id": 5,
+      "userId": 5,
+      "employerId": 105,
+      "jobId": 5,
+      "rating": 5,
+      "feedbackText": "Chris exceeded sales targets consistently and was a valuable asset to the team.",
+      "feedbackDate": "02/27/2024"
+    },
+    {
+      "id": 6,
+      "userId": 6,
+      "employerId": 106,
+      "jobId": 6,
+      "rating": 3,
+      "feedbackText": "Sara was efficient in HR tasks but sometimes struggled with conflict resolution.",
+      "feedbackDate": "03/01/2024"
+    },
+    {
+      "id": 7,
+      "userId": 7,
+      "employerId": 107,
+      "jobId": 7,
+      "rating": 4,
+      "feedbackText": "Adam provided insightful financial analysis and contributed positively to decision-making.",
+      "feedbackDate": "03/04/2024"
+    }
+  ],
+  "MultilingualSupport": [
+    {
+      "id": 1,
+      "languageName": "English"
+    },
+    {
+      "id": 2,
+      "languageName": "Spanish"
+    },
+    {
+      "id": 3,
+      "languageName": "French"
+    },
+    {
+      "id": 4,
+      "languageName": "German"
+    },
+    {
+      "id": 5,
+      "languageName": "Chinese"
+    },
+    {
+      "id": 6,
+      "languageName": "Japanese"
+    },
+    {
+      "id": 7,
+      "languageName": "Korean"
+    },
+    {
+      "id": 8,
+      "languageName": "Italian"
+    },
+    {
+      "id": 9,
+      "languageName": "Russian"
+    },
+    {
+      "id": 10,
+      "languageName": "Arabic"
+    }
+  ],
+  "UserPreferences": [
+    {
+      "id": 1,
+      "languageID": 1,
+      "notificationSettings": "Email, SMS"
+    },
+    {
+      "id": 2,
+      "languageID": 1,
+      "notificationSettings": "Email"
+    },
+    {
+      "id": 3,
+      "languageID": 2,
+      "notificationSettings": "SMS"
+    },
+    {
+      "id": 4,
+      "languageID": 1,
+      "notificationSettings": "Email"
+    },
+    {
+      "id": 5,
+      "languageID": 3,
+      "notificationSettings": "Email, SMS"
+    },
+    {
+      "id": 6,
+      "languageID": 1,
+      "notificationSettings": "SMS"
+    },
+    {
+      "id": 7,
+      "languageID": 2,
+      "notificationSettings": "Email"
+    }
+  ],
+  "JobSuggestions": [
+    {
+      "id": 1,
+      "jobId": 3
+    },
+    {
+      "id": 2,
+      "jobId": 4
+    },
+    {
+      "id": 3,
+      "jobId": 5
+    },
+    {
+      "id": 4,
+      "jobId": 6
+    },
+    {
+      "id": 5,
+      "jobId": 7
+    },
+    {
+      "id": 6,
+      "jobId": 8
+    },
+    {
+      "id": 7,
+      "jobId": 9
+    }
+  ],
+  "SearchApplicationHistory": [
+    {
+      "id": 1,
+      "searchQuery": "Data Analyst",
+      "applicationDate": "04/15/2024"
+    },
+    {
+      "id": 2,
+      "searchQuery": "Marketing Specialist",
+      "applicationDate": "04/18/2024"
+    },
+    {
+      "id": 3,
+      "searchQuery": "Graphic Designer",
+      "applicationDate": "04/21/2024"
+    },
+    {
+      "id": 4,
+      "searchQuery": "Software Engineer",
+      "applicationDate": "04/24/2024"
+    },
+    {
+      "id": 5,
+      "searchQuery": "Sales Representative",
+      "applicationDate": "04/27/2024"
+    },
+    {
+      "id": 6,
+      "searchQuery": "Human Resources Manager",
+      "applicationDate": "05/01/2024"
+    },
+    {
+      "id": 7,
+      "searchQuery": "Financial Analyst",
+      "applicationDate": "05/04/2024"
+    }
+  ],
+  "PersonalDataSecurity": [
+    {
+      "id": 1,
+      "securityQuestion": "What is your mother's maiden name?",
+      "securityAnswer": "Smith"
+    },
+    {
+      "id": 2,
+      "securityQuestion": "What is the name of your first pet?",
+      "securityAnswer": "Fluffy"
+    },
+    {
+      "id": 3,
+      "securityQuestion": "In what city were you born?",
+      "securityAnswer": "Los Angeles"
+    },
+    {
+      "id": 4,
+      "securityQuestion": "What is the name of your favorite teacher?",
+      "securityAnswer": "Mr. Johnson"
+    },
+    {
+      "id": 5,
+      "securityQuestion": "What is the make and model of your first car?",
+      "securityAnswer": "Toyota Corolla"
+    },
+    {
+      "id": 6,
+      "securityQuestion": "What is the name of your childhood best friend?",
+      "securityAnswer": "Sarah"
+    },
+    {
+      "id": 7,
+      "securityQuestion": "What is your favorite movie?",
+      "securityAnswer": "The Shawshank Redemption"
+    },
+    {
+      "id": 8,
+      "securityQuestion": "What is your favorite color?",
+      "securityAnswer": "Blue"
+    },
+    {
+      "id": 9,
+      "securityQuestion": "What is your favorite food?",
+      "securityAnswer": "Pizza"
+    },
+    {
+      "id": 10,
+      "securityQuestion": "What is your favorite vacation destination?",
+      "securityAnswer": "Paris"
+    },
+    {
+      "id": 11,
+      "securityQuestion": "What is your father's middle name?",
+      "securityAnswer": "William"
+    },
+    {
+      "id": 12,
+      "securityQuestion": "What is your favorite book?",
+      "securityAnswer": "To Kill a Mockingbird"
+    },
+    {
+      "id": 13,
+      "securityQuestion": "What is your favorite hobby?",
+      "securityAnswer": "Playing guitar"
+    },
+    {
+      "id": 14,
+      "securityQuestion": "What is the name of your high school?",
+      "securityAnswer": "Central High"
+    },
+    {
+      "id": 15,
+      "securityQuestion": "What is your favorite sports team?",
+      "securityAnswer": "New York Yankees"
+    },
+    {
+      "id": 16,
+      "securityQuestion": "What is your favorite childhood memory?",
+      "securityAnswer": "Family camping trips"
+    },
+    {
+      "id": 17,
+      "securityQuestion": "What is your favorite TV show?",
+      "securityAnswer": "Friends"
+    },
+    {
+      "id": 18,
+      "securityQuestion": "What is your favorite beverage?",
+      "securityAnswer": "Coffee"
+    },
+    {
+      "id": 19,
+      "securityQuestion": "What is your favorite musical artist?",
+      "securityAnswer": "The Beatles"
+    },
+    {
+      "id": 20,
+      "securityQuestion": "What is your favorite season?",
+      "securityAnswer": "Fall"
+    }
+  ]
+}
