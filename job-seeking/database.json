@@ -62,6 +62,20 @@
       "email": "doilonvl@gmail.com",
       "roleId": 3,
       "id": 9
+    },
+    {
+      "username": "kat",
+      "password": "Doilonvl69",
+      "email": "cafeomcua212312@gmail.com",
+      "roleId": 3,
+      "id": 10
+    },
+    {
+      "username": "a",
+      "password": "Doilonvl69",
+      "email": "a@gmail.com",
+      "roleId": 3,
+      "id": 11
     }
   ],
   "Roles": [

@@ -3,7 +3,12 @@ import { useEffect, useState } from "react";
 
 export default function Header() {
   const nav = useNavigate();
-  const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")));
+  const [user, setUser] = useState(null); 
+
+  useEffect(() => {
+    const userData = JSON.parse(localStorage.getItem("user"));
+    setUser(userData);
+  }, [user]); 
 
   const handleLogout = () => {
     localStorage.removeItem("user"); 

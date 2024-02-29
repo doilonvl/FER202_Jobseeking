@@ -8,6 +8,7 @@ const Register = () => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [rePassword, setRePassword] = useState('');
 
   const validateEmail = (email) => {
     const regex = /\S+@\S+\.\S+/;
@@ -17,8 +18,8 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/;
-  
-    if (username === '' || email === '' || password === '') {
+
+    if (username === '' || email === '' || password === '' || rePassword === '') {
       Swal.fire({
         icon: 'error',
         title: 'Oops...',
@@ -42,7 +43,15 @@ const Register = () => {
       });
       return;
     }
-    
+    if (password !== rePassword) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Passwords do not match!',
+      });
+      return;
+    }
+
     try {
       const registerResponse = await axios.post(
         'http://localhost:9999/Users',
@@ -50,20 +59,20 @@ const Register = () => {
           username,
           password,
           email,
-          roleId: 3
+          roleId: 3,
         }
       );
-    
+
       const user = registerResponse.data;
-    
+
       if (user && user.username) {
         Swal.fire({
-            position: 'center',
-            icon: 'success',
-            title: 'Registration successful',
-            showConfirmButton: false,
-            timer: 1500,
-          });          
+          position: 'center',
+          icon: 'success',
+          title: 'Registration successful',
+          showConfirmButton: false,
+          timer: 1500,
+        });
         navigate('/login');
       } else {
         console.error('Unexpected response format:', user);
@@ -82,7 +91,6 @@ const Register = () => {
       });
     }
   };
-  
 
   return (
     <div className="d-flex justify-content-center">
@@ -124,6 +132,17 @@ const Register = () => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Password"
+              />
+            </div>
+            <div className="form-group text-left">
+              <label htmlFor="rePassword">Re-enter Password</label>
+              <input
+                type="password"
+                id="rePass"
+                className="form-control"
+                value={rePassword}
+                onChange={(e) => setRePassword(e.target.value)}
+                placeholder="Re-enter Password"
               />
             </div>
             <button
