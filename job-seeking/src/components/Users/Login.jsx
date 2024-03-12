@@ -44,6 +44,7 @@ const Login = () => {
         });
         localStorage.setItem("user", JSON.stringify(user));
         nav("/home");
+        
         window.location.reload();
       } else {
         Swal.fire({
