@@ -22,7 +22,7 @@
       "roleId": 1
     },
     {
-      "id": "4",
+      "id": 4,
       "username": "emily_brown",
       "password": "emilypass",
       "email": "emily.brown@example.com",
@@ -33,49 +33,77 @@
       "username": "chris_wilson",
       "password": "chrispass",
       "email": "chris.wilson@example.com",
-      "roleId": 3
+      "roleId": 3,
+      "preferences": {
+        "favoriteMajor": "Business",
+        "skills": ["Management", "Marketing", "Finance"]
+      }
     },
     {
       "id": 6,
       "username": "sara_clark",
       "password": "sarapass",
       "email": "sara.clark@example.com",
-      "roleId": 3
+      "roleId": 3,
+      "preferences": {
+        "favoriteMajor": "Healthcare",
+        "skills": ["Nursing", "Medicine", "Pharmacy"]
+      }
     },
     {
       "id": 7,
       "username": "adam_miller",
       "password": "adampass",
       "email": "adam.miller@example.com",
-      "roleId": 3
+      "roleId": 3,
+      "preferences": {
+        "favoriteMajor": "Education",
+        "skills": ["Teaching", "Curriculum Development", "Education Administration"]
+      }
     },
     {
+      "id": 8,
       "username": "qwe",
       "password": "123123qwe",
       "email": "cafeomcua22@gmail.com",
       "roleId": 3,
-      "id": 8
+      "preferences": {
+        "favoriteMajor": "Design",
+        "skills": ["Adobe Photoshop", "Illustrator", "UI/UX Design"]
+      }
     },
     {
+      "id": 9,
       "username": "qweqwe",
       "password": "123wqeqweqw",
       "email": "doilonvl@gmail.com",
       "roleId": 3,
-      "id": 9
+      "preferences": {
+        "favoriteMajor": "Mathematics",
+        "skills": ["Algebra", "Geometry", "Calculus"]
+      }
     },
     {
+      "id": 10,
       "username": "kat",
       "password": "Doilonvl69",
       "email": "cafeomcua212312@gmail.com",
       "roleId": 3,
-      "id": 10
+      "preferences": {
+        "favoriteMajor": "Music",
+        "skills": ["Playing Instruments", "Music Composition", "Music Production"]
+      }
     },
     {
+      "id": 11,
       "username": "a",
       "password": "Doilonvl69",
       "email": "a@gmail.com",
       "roleId": 3,
-      "id": 11
+      "preferences": {
+        "favoriteMajor": "Film",
+        "skills": ["Directing", "Cinematography", "Film Editing"]
+      }
     }
   ],
   "Roles": [

@@ -39,6 +39,7 @@ export default function Header() {
         <Link to="/">Recruitment company</Link>
         <Link to="/">Job</Link>
         <Link to="/">Job opportunities</Link>
+        <Link to="/job-suggestion">Job Suggestion</Link>
       </nav>
       <div className="auth-links">
         {user == null ? (
