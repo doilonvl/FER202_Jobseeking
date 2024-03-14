@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Login from './components/Users/Login';
 import Register from './components/Users/Register';
 import Home from './components/Home/Home';
@@ -19,7 +19,8 @@ function App() {
       <Routes>
         <Route path="/login" element={<Login updateUser={updateUser} />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/" element={<Navigate replace to="/home" />} />
       </Routes>
       <Footer />
     </BrowserRouter>
