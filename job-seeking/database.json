@@ -101,7 +101,8 @@
       "skills": "Java, Python, SQL",
       "jobType": "Full-time",
       "salaryRange": "$80,000 - $100,000",
-      "requiredExperience": 3
+      "requiredExperience": 3,
+      "image": ""
     },
     {
       "id": 2,
@@ -111,7 +112,8 @@
       "skills": "SEO, SEM, Social Media Marketing",
       "jobType": "Full-time",
       "salaryRange": "$60,000 - $80,000",
-      "requiredExperience": 2
+      "requiredExperience": 2,
+      "image": ""
     },
     {
       "id": 3,
@@ -121,7 +123,8 @@
       "skills": "Adobe Photoshop, Illustrator, UI/UX Design",
       "jobType": "Part-time",
       "salaryRange": "$40,000 - $60,000",
-      "requiredExperience": 1
+      "requiredExperience": 1,
+      "image": ""
     },
     {
       "id": 4,
@@ -131,7 +134,8 @@
       "skills": "Data Mining, Statistical Analysis, Excel",
       "jobType": "Full-time",
       "salaryRange": "$70,000 - $90,000",
-      "requiredExperience": 2
+      "requiredExperience": 2,
+      "image": ""
     },
     {
       "id": 5,
@@ -141,7 +145,8 @@
       "skills": "Negotiation, Communication, Sales Strategy",
       "jobType": "Full-time",
       "salaryRange": "$50,000 - $70,000",
-      "requiredExperience": 1
+      "requiredExperience": 1,
+      "image": ""
     },
     {
       "id": 6,
@@ -151,7 +156,8 @@
       "skills": "Recruitment, Employee Relations, HR Policies",
       "jobType": "Full-time",
       "salaryRange": "$60,000 - $80,000",
-      "requiredExperience": 3
+      "requiredExperience": 3,
+      "image": ""
     },
     {
       "id": 7,
@@ -161,7 +167,8 @@
       "skills": "Financial Modeling, Forecasting, Accounting",
       "jobType": "Full-time",
       "salaryRange": "$70,000 - $90,000",
-      "requiredExperience": 2
+      "requiredExperience": 2,
+      "image": ""
     },
     {
       "id": 8,
@@ -171,7 +178,8 @@
       "skills": "Problem Solving, Communication, Patience",
       "jobType": "Part-time",
       "salaryRange": "$30,000 - $40,000",
-      "requiredExperience": 1
+      "requiredExperience": 1,
+      "image": ""
     },
     {
       "id": 9,
@@ -181,7 +189,8 @@
       "skills": "HTML, CSS, JavaScript",
       "jobType": "Full-time",
       "salaryRange": "$60,000 - $80,000",
-      "requiredExperience": 2
+      "requiredExperience": 2,
+      "image": ""
     },
     {
       "id": 10,
@@ -191,7 +200,8 @@
       "skills": "Creative Writing, SEO, Blogging",
       "jobType": "Part-time",
       "salaryRange": "$20,000 - $40,000",
-      "requiredExperience": 1
+      "requiredExperience": 1,
+      "image": ""
     },
     {
       "id": 11,
@@ -201,7 +211,8 @@
       "skills": "Project Planning, Leadership, Time Management",
       "jobType": "Full-time",
       "salaryRange": "$80,000 - $100,000",
-      "requiredExperience": 3
+      "requiredExperience": 3,
+      "image": ""
     },
     {
       "id": 12,
@@ -211,7 +222,8 @@
       "skills": "Legal Research, Documentation, Legal Writing",
       "jobType": "Full-time",
       "salaryRange": "$40,000 - $60,000",
-      "requiredExperience": 2
+      "requiredExperience": 2,
+      "image": ""
     },
     {
       "id": 13,
@@ -221,7 +233,8 @@
       "skills": "Wireframing, Prototyping, User Testing",
       "jobType": "Full-time",
       "salaryRange": "$70,000 - $90,000",
-      "requiredExperience": 3
+      "requiredExperience": 3,
+      "image": ""
     },
     {
       "id": 14,
@@ -231,7 +244,8 @@
       "skills": "Operations Management, Process Improvement, Budgeting",
       "jobType": "Full-time",
       "salaryRange": "$80,000 - $100,000",
-      "requiredExperience": 4
+      "requiredExperience": 4,
+      "image": ""
     },
     {
       "id": 15,
@@ -241,7 +255,8 @@
       "skills": "Content Strategy, Social Media Analytics, Community Management",
       "jobType": "Full-time",
       "salaryRange": "$50,000 - $70,000",
-      "requiredExperience": 2
+      "requiredExperience": 2,
+      "image": ""
     },
     {
       "id": 16,
@@ -251,7 +266,8 @@
       "skills": "Network Security, Troubleshooting, Network Configuration",
       "jobType": "Full-time",
       "salaryRange": "$60,000 - $80,000",
-      "requiredExperience": 3
+      "requiredExperience": 3,
+      "image": ""
     },
     {
       "id": 17,
@@ -261,7 +277,8 @@
       "skills": "Event Management, Vendor Coordination, Budget Management",
       "jobType": "Full-time",
       "salaryRange": "$40,000 - $60,000",
-      "requiredExperience": 2
+      "requiredExperience": 2,
+      "image": ""
     },
     {
       "id": 18,
@@ -271,7 +288,8 @@
       "skills": "Patient Care, Medical Terminology, Medical Records Management",
       "jobType": "Full-time",
       "salaryRange": "$30,000 - $40,000",
-      "requiredExperience": 1
+      "requiredExperience": 1,
+      "image": ""
     },
     {
       "id": 19,
@@ -281,7 +299,8 @@
       "skills": "Financial Reporting, Taxation, Audit",
       "jobType": "Full-time",
       "salaryRange": "$60,000 - $80,000",
-      "requiredExperience": 3
+      "requiredExperience": 3,
+      "image": ""
     },
     {
       "id": 20,
@@ -291,7 +310,8 @@
       "skills": "Calendar Management, Travel Arrangements, Meeting Coordination",
       "jobType": "Full-time",
       "salaryRange": "$50,000 - $70,000",
-      "requiredExperience": 2
+      "requiredExperience": 2,
+      "image": ""
     }
   ],
   "SavedJobs": [
