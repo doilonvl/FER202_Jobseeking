@@ -5,6 +5,7 @@ import Register from './components/Users/Register';
 import Home from './components/Home/Home';
 import Header from './components/Home/Header';
 import Footer from './components/Home/Footer';
+import JobList from './components/Users/JobList';
 
 function App() {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")));
@@ -21,6 +22,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/home" element={<Home />} />
         <Route path="/" element={<Navigate replace to="/home" />} />
+        <Route path="/job" element={<JobList />} />
       </Routes>
       <Footer />
     </BrowserRouter>
