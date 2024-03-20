@@ -12,11 +12,12 @@ export default function Header() {
   useEffect(() => {
     const userData = JSON.parse(localStorage.getItem("user"));
     setUser(userData);
-  }, [user]);
+  }, []);
 
   const handleLogout = () => {
     localStorage.removeItem("user");
     setUser(null);
+    window.location.reload()
     nav("/login");
   };
 
