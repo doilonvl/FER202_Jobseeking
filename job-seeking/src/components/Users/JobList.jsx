@@ -143,7 +143,7 @@ function JobCard({ job }) {
         <Card.Text className="job-location">{job.location}</Card.Text>
         <Card.Text className="job-salary">{job.salaryRange}</Card.Text>
         <Card.Text className="job-type">{job.jobType}</Card.Text>
-        <Link to={`/jobs/${job.id}`}>
+        <Link to={`/job/${job.id}`}>
           <Button variant="primary">Xem chi tiết</Button>
         </Link>
       </Card.Body>

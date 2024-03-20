@@ -10,6 +10,7 @@ import UserProfile from './components/Users/UserProfile';
 
 import MyResume from './components/Users/MyResume';
 import CreateCV from './components/Users/CreateCV';
+import JobDetail from './components/Users/JobDetail';
 function App() {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")));
 
@@ -28,6 +29,7 @@ function App() {
           <Route path="/profile" element={<UserProfile/>} />
           <Route path="/" element={<Navigate replace to="/home" />} />
           <Route path="/job" element={<JobList />} />
+          <Route path="/job/:jId" element={<JobDetail/>} />
           <Route path="/profile" element={<UserProfile />} />
           <Route path="/MyResume/:slug" element={<MyResume/>} />
           <Route path="/AddCv" element={<CreateCV/>} />
