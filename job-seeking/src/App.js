@@ -5,6 +5,7 @@ import Register from './components/Users/Register';
 import Home from './components/Home/Home';
 import Header from './components/Home/Header';
 import Footer from './components/Home/Footer';
+import JobList from './components/Users/JobList';
 import UserProfile from './components/Users/UserProfile';
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/profile" element={<UserProfile/>} />
         <Route path="/" element={<Navigate replace to="/home" />} />
+        <Route path="/job" element={<JobList />} />
       </Routes>
       <Footer />
     </BrowserRouter>

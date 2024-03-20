@@ -38,7 +38,7 @@ export default function Header() {
         <Link to="/">Home</Link>
         <Link to="/">CV</Link>
         <Link to="/">Recruitment company</Link>
-        <Link to="/">Job</Link>
+        <Link to="/job">Job</Link>
         <Link to="/">Job opportunities</Link>
       </nav>
       <div className="auth-links">
