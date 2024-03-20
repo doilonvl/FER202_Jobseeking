@@ -1,17 +1,28 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "../Styles/Header.css";
 import "../Styles/Default.css";
 import { Person } from "react-bootstrap-icons";
+import axios from "axios";
 
 export default function Header() {
   const nav = useNavigate();
   const [user, setUser] = useState(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  const [isCreate, setIsCreate] = useState(false);
+  const {id} = useParams()
   useEffect(() => {
     const userData = JSON.parse(localStorage.getItem("user"));
     setUser(userData);
+
+    axios
+    .get(`http://localhost:9999/CV?userId=${user?.id}`)
+    .then(res => {
+      const size = res.data.length;
+      size === 0 ? setIsCreate(false):setIsCreate(true);
+    })
+    .catch(err => console.log(err))
+
   }, []);
 
   const handleLogout = () => {
@@ -36,7 +47,11 @@ export default function Header() {
       </div>
       <nav className="nav-links">
         <Link to="/">Home</Link>
-        <Link to="/">CV</Link>
+        {isCreate ?
+          <Link to={`/MyResume/${user?.id}`}>CV</Link>
+        :
+        <Link to={`addCv`}>CV</Link>
+      }
         <Link to="/">Recruitment company</Link>
         <Link to="/job">Job</Link>
         <Link to="/">Job opportunities</Link>

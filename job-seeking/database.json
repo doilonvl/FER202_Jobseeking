@@ -134,6 +134,170 @@
       "roleName": "User"
     }
   ],
+  "CV": [
+    {
+      "id": 1,
+      "userId": 7,
+      "basicInformation": {
+        "fullName": "Nguyen Van A",
+        "email": "nguyenvana@example.com",
+        "phone": "0123456789",
+        "careerObjective": "Seeking a position in software development."
+      },
+      "education": {
+        "degree": "Bachelor's Degree",
+        "university": "ABC University",
+        "graduationYear": 2020
+      },
+      "workExperience": {
+        "company": "XYZ Tech",
+        "position": "Software Engineer",
+        "startDate": "2019-01-01",
+        "endDate": "2021-05-31"
+      },
+      "skills": {
+        "technicalSkills": [
+          "JavaScript",
+          "React",
+          "Node.js"
+        ],
+        "softSkills": [
+          "Communication",
+          "Problem-solving"
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "userId": 8,
+      "basicInformation": {
+        "fullName": "Nguyen Van B",
+        "email": "nguyenvanb@example.com",
+        "phone": "0987654321",
+        "careerObjective": "Seeking a position in software development."
+      },
+      "education": {
+        "degree": "Bachelor's Degree",
+        "university": "FPT University",
+        "graduationYear": 2020
+      },
+      "workExperience": {
+        "company": "FPT Software",
+        "position": "Software Engineer",
+        "startDate": "2019-01-01",
+        "endDate": "2021-05-31"
+      },
+      "skills": {
+        "technicalSkills": [
+          "Java",
+          "React",
+          "Node.js"
+        ],
+        "softSkills": [
+          "Communication",
+          "Problem-solving",
+          "Funny",
+          "Task Multitasking"
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "userId": 10,
+      "basicInformation": {
+        "fullName": "Tran Thanh Hai",
+        "email": "haitranthanh@example.com",
+        "phone": "0123456789",
+        "careerObjective": "Seeking a position in marketing ."
+      },
+      "education": {
+        "degree": "Bachelor's Degree",
+        "university": "NEU University",
+        "graduationYear": 2022
+      },
+      "workExperience": {
+        "company": "Shoope",
+        "position": "Maketing Inter nspector",
+        "startDate": "2019-01-01",
+        "endDate": "2021-05-31"
+      },
+      "skills": {
+        "technicalSkills": [
+          "MaD",
+          "Mas",
+          "Gucci Gang"
+        ],
+        "softSkills": [
+          "Communication",
+          "Problem-solving"
+        ]
+      }
+    },
+    {
+      "userId": 12,
+      "basicInformation": {
+        "fullName": "trần Thanh Hải",
+        "email": "gvtvjetnam@gmail.com",
+        "phone": "0912320855",
+        "careerObjective": "12 nuu"
+      },
+      "education": {
+        "degree": "Soft ware",
+        "university": "FPT University",
+        "graduationYear": "2021"
+      },
+      "workExperience": {
+        "company": "Giao tan ",
+        "position": "2122",
+        "startDate": "2024-03-14",
+        "endDate": "2024-03-22"
+      },
+      "skills": {
+        "technicalSkills": [
+          "giao tan ",
+          " giao thuy ",
+          " nam đinh "
+        ],
+        "softSkills": [
+          "hoac nx",
+          " hoc mai "
+        ]
+      },
+      "id": 7
+    },
+    {
+      "userId": 12,
+      "basicInformation": {
+        "fullName": "trần Thanh Hải 123",
+        "email": "gvtvjetnam@gmail.com",
+        "phone": "0912320855",
+        "careerObjective": "asss"
+      },
+      "education": {
+        "degree": "Soft wares",
+        "university": "FPT University `1223",
+        "graduationYear": "2021"
+      },
+      "workExperience": {
+        "company": "Giao tan ",
+        "position": "20122",
+        "startDate": "2024-03-22",
+        "endDate": "2024-03-23"
+      },
+      "skills": {
+        "technicalSkills": [
+          "giao tan ",
+          " giao thuy ",
+          " nam đinh "
+        ],
+        "softSkills": [
+          "Bia",
+          " Game"
+        ]
+      },
+      "id": 8
+    }
+  ],
   "Jobs": [
     {
       "id": 1,
