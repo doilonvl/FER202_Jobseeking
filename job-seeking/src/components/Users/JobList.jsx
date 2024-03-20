@@ -33,7 +33,7 @@ function JobList() {
   };
 
   return (
-    <div className="container">
+    <div className="container fluid">
       <h1 className="text-center mt-4">Danh sách công việc</h1>
       
       <Form className="mb-4">
