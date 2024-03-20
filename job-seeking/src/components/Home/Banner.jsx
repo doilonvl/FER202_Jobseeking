@@ -17,16 +17,16 @@ const Banner = () => {
           With Job Portal you can experience new job and <br />
          find the job that best suits you
         </p>
-        <Link to="/destination">
+        <Link to="/job">
         <button className="destination-button">
-          Our Services
+          Apply Job Now
           <span className="destination-button-arrow"><img src="/img/Continue.png" alt="arrow" style={{ width: '24px', height: '24px' }} /></span>
         </button>
         </Link> 
-        <Link to="/gallery">
+        <Link to="/addCv">
         <button className="gallery-button">
         <span className="gallery-button-play"><img src="/img/play.png" alt="play" style={{ width: '24px', height: '24px' }} /></span>
-          Our Gallery
+          Create CV for better job
         </button>
         </Link>
       </div>

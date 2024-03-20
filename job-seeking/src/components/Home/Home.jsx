@@ -82,29 +82,6 @@ function Home() {
           style={{ backgroundImage: 'url("/img/image-31.png")' }}
         ></button>
       </div>
-
-      <div className="home">
-        <div className="left-side">
-          <h1 style={{ width: "332px" }}>
-            Destinations <br />
-            Most Popular
-          </h1>
-        </div>
-        <div className="mid-content">
-          Some of the most popular destinations for <br />
-          you visit with a view the beautiful one.
-        </div>
-        <div className="circle-button">
-          <button className="circle-button-white">
-            <img src="/img/arrowleft.png" alt="arrow" />
-          </button>
-        </div>
-        <div className="circle-button" style={{ marginLeft: "12px" }}>
-          <button className="circle-button-black">
-            <img src="/img/arrowright.png" alt="arrow" />
-          </button>
-        </div>
-      </div>
     </div>
   );
 }

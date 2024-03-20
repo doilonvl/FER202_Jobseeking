@@ -4,6 +4,7 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import "../Styles/Profile.css";
 import Login from "./Login";
+import { Link } from "react-router-dom";
 
 const UserProfile = () => {
   const [user, setUser] = useState(null);
@@ -99,7 +100,7 @@ const UserProfile = () => {
   
 
   return (
-    <Container style={{ marginTop: "2%" }}>
+    <Container style={{ marginTop: "2%" }} className="profile_all">
       {user === null ? (
         <Login />
       ) : (
@@ -134,10 +135,16 @@ const UserProfile = () => {
                     </a>
                   </li>
                   <li>
-                    <a href="#">
+                    <Link to={"/MyResume/" + user.id}>
+                      {" "}
+                      <i className="fa fa-user"></i> My CV
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/job/job_apply">
                       {" "}
                       <i className="fa fa-pencil"></i> Job apply
-                    </a>
+                    </Link>
                   </li>
                 </ul>
                 <input type="file" id="fileInput" style={{ display: "none" }} onChange={handleImageChange} accept="image/*" />

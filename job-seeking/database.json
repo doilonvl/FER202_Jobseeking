@@ -31,7 +31,7 @@
       "address": "123 Maple St Anytown"
     },
     {
-      "id": "4",
+      "id": 4,
       "username": "emily_brown",
       "password": "emilypass",
       "email": "emily.brown@example.com",
@@ -296,6 +296,35 @@
         ]
       },
       "id": 8
+    },
+    {
+      "userId": 11,
+      "basicInformation": {
+        "fullName": "Admin",
+        "email": "vunhhe161239@fpt.edu.vn",
+        "phone": "0999999999",
+        "careerObjective": "ew"
+      },
+      "education": {
+        "degree": "ad",
+        "university": "ads",
+        "graduationYear": "2020"
+      },
+      "workExperience": {
+        "company": "qwe",
+        "position": "qwe",
+        "startDate": "2024-03-09",
+        "endDate": "2024-03-30"
+      },
+      "skills": {
+        "technicalSkills": [
+          "none"
+        ],
+        "softSkills": [
+          "deep learn"
+        ]
+      },
+      "id": 9
     }
   ],
   "Jobs": [

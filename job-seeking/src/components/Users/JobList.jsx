@@ -124,7 +124,7 @@ function JobList() {
 
       <Row className="job-cards">
         {jobs.filter(filterJobs).map(job => (
-          <Col key={job.id} xs={12} sm={6} md={4} lg={2}>
+          <Col key={job.id} xs={12} sm={6} md={4} lg={0}>
             <JobCard job={job} />
           </Col>
         ))}

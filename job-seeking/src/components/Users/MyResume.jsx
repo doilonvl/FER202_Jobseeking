@@ -47,7 +47,7 @@ const MyResume = () => {
     }
 
     return (
-        <Container>
+        <Container className='cv_all'>
          
                 <>
                     <Row className="avatar">
