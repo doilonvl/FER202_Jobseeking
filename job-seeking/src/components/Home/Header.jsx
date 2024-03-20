@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "../Styles/Header.css";
 import "../Styles/Default.css";
@@ -8,11 +8,11 @@ export default function Header() {
   const nav = useNavigate();
   const [user, setUser] = useState(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  const {id} = useParams()
   useEffect(() => {
     const userData = JSON.parse(localStorage.getItem("user"));
     setUser(userData);
-  }, [user]);
+  }, []);
 
   const handleLogout = () => {
     localStorage.removeItem("user");
@@ -35,7 +35,7 @@ export default function Header() {
       </div>
       <nav className="nav-links">
         <Link to="/">Home</Link>
-        <Link to="/">CV</Link>
+        <Link to="/CV">CV</Link>
         <Link to="/">Recruitment company</Link>
         <Link to="/">Job</Link>
         <Link to="/">Job opportunities</Link>

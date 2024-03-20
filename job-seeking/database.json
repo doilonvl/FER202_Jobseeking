@@ -92,6 +92,130 @@
       "roleName": "User"
     }
   ],
+  "CV": [
+    {
+      "id": 1,
+      "userId": 7,
+      "basicInformation": {
+        "fullName": "Nguyen Van A",
+        "email": "nguyenvana@example.com",
+        "phone": "0123456789",
+        "careerObjective": "Seeking a position in software development."
+      },
+      "education": {
+        "degree": "Bachelor's Degree",
+        "university": "ABC University",
+        "graduationYear": 2020
+      },
+      "workExperience": {
+        "company": "XYZ Tech",
+        "position": "Software Engineer",
+        "startDate": "2019-01-01",
+        "endDate": "2021-05-31"
+      },
+      "skills": {
+        "technicalSkills": [
+          "JavaScript",
+          "React",
+          "Node.js"
+        ],
+        "softSkills": [
+          "Communication",
+          "Problem-solving"
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "userId": 8,
+      "basicInformation": {
+        "fullName": "Nguyen Van B",
+        "email": "nguyenvanb@example.com",
+        "phone": "0987654321",
+        "careerObjective": "Seeking a position in software development."
+      },
+      "education": {
+        "degree": "Bachelor's Degree",
+        "university": "FPT University",
+        "graduationYear": 2020
+      },
+      "workExperience": {
+        "company": "FPT Software",
+        "position": "Software Engineer",
+        "startDate": "2019-01-01",
+        "endDate": "2021-05-31"
+      },
+      "skills": {
+        "technicalSkills": [
+          "Java",
+          "React",
+          "Node.js"
+        ],
+        "softSkills": [
+          "Communication",
+          "Problem-solving",
+          "Funny",
+          "Task Multitasking"
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "userId": 10,
+      "basicInformation": {
+        "fullName": "Tran Thanh Hai",
+        "email": "haitranthanh@example.com",
+        "phone": "0123456789",
+        "careerObjective": "Seeking a position in marketing ."
+      },
+      "education": {
+        "degree": "Bachelor's Degree",
+        "university": "NEU University",
+        "graduationYear": 2022
+      },
+      "workExperience": {
+        "company": "Shoope",
+        "position": "Maketing Inter nspector",
+        "startDate": "2019-01-01",
+        "endDate": "2021-05-31"
+      },
+      "skills": {
+        "technicalSkills": [
+          "MaD",
+          "Mas",
+          "Gucci Gang"
+        ],
+        "softSkills": [
+          "Communication",
+          "Problem-solving"
+        ]
+      }
+    },
+    
+    
+    
+   
+    {
+      "fullName": "trần Thanh Hải",
+      "email": "0949087243@gmail.com",
+      "phone": "0912320855",
+      "careerObjective": "1111",
+      "degree": "111",
+      "university": "111",
+      "graduationYear": "11",
+      "company": "111",
+      "position": "111",
+      "startDate": "2024-03-29",
+      "endDate": "2024-03-15",
+      "technicalSkills": [
+        "1111"
+      ],
+      "softSkills": [
+        "111"
+      ],
+      "id": 8
+    }
+  ],
   "Jobs": [
     {
       "id": 1,
