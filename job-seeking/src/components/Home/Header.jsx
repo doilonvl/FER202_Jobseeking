@@ -22,6 +22,7 @@ export default function Header() {
       size === 0 ? setIsCreate(false):setIsCreate(true);
     })
     .catch(err => console.log(err))
+
   }, []);
 
   const handleLogout = () => {

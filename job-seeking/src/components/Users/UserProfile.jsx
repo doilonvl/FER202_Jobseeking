@@ -19,7 +19,6 @@ const UserProfile = () => {
   };
 
   const handleImageClick = () => {
-    // Trigger file input click when the image is clicked
     document.getElementById("fileInput").click();
   };
 
@@ -104,8 +103,7 @@ const UserProfile = () => {
       {user === null ? (
         <Login />
       ) : (
-        
-        <div className=" bootstrap snippets bootdey">
+        <div className="container bootstrap snippets bootdey">
           <link
             href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
             rel="stylesheet"
@@ -115,7 +113,7 @@ const UserProfile = () => {
               <div className="panel">
                 <div className="user-heading round">
                   <a href="#" className="img_hover" onClick={handleImageClick}>
-                    {user.avatar != null ? (
+                    {user.avatar !== null ? (
                       <img src={user.avatar} alt="" />
                     ) : (
                       <img src="https://parade.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTk0OTMxNTc0Njc1NzQzOTA2/avatar-3-evil-navi-james-cameron.jpg" alt="" />
@@ -135,6 +133,12 @@ const UserProfile = () => {
                       <i className="fa fa-edit"></i> Edit profile
                     </a>
                   </li>
+                  <li>
+                    <a href="#">
+                      {" "}
+                      <i className="fa fa-pencil"></i> Job apply
+                    </a>
+                  </li>
                 </ul>
                 <input type="file" id="fileInput" style={{ display: "none" }} onChange={handleImageChange} accept="image/*" />
               </div>
@@ -146,7 +150,7 @@ const UserProfile = () => {
                   metus.
                 </div>
                 <div className="panel-body bio-graph-info">
-                  <h1>Bio Graph</h1>
+                  <h1>User profile</h1>
                   <div className="row">
                     <div className="col-md-6">
                       <form>
@@ -173,6 +177,17 @@ const UserProfile = () => {
                             readOnly={!editMode}
                             placeholder="Enter your phone number"
                             onChange={(e) => setUser({ ...user, phoneNumber: e.target.value })}
+                          />
+                        </div>
+                        <div className="form-group">
+                          <label htmlFor="Education">Education</label>
+                          <input
+                            type="text"
+                            className="form-control"
+                            id="name"
+                            required
+                            readOnly={!editMode}
+                            placeholder="Enter your education"
                           />
                         </div>
                       </form>
@@ -202,6 +217,17 @@ const UserProfile = () => {
                             readOnly={!editMode}
                             placeholder="Enter your address"
                             onChange={(e) => setUser({ ...user, address: e.target.value })}
+                          />
+                        </div>
+                        <div className="form-group">
+                          <label htmlFor="Experiance">Experiance</label>
+                          <input
+                            type="text"
+                            className="form-control"
+                            id="name"
+                            required
+                            readOnly={!editMode}
+                            placeholder="Enter your experiance"
                           />
                         </div>
                       </form>
