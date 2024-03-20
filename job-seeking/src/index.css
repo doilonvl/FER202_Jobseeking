@@ -11,3 +11,27 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.job-card {
+  height: 100%; /* Đảm bảo các card có cùng chiều cao */
+  margin-bottom: 20px; /* Khoảng cách giữa các card */
+}
+
+.job-card .card-body {
+  padding: 10px; /* Khoảng cách giữa nội dung và viền của card */
+}
+
+.job-card .card-title {
+  font-size: 18px; /* Kích thước tiêu đề */
+}
+
+.job-card .card-text {
+  font-size: 14px; /* Kích thước văn bản */
+  overflow: hidden; /* Ngăn chặn văn bản dài tràn ra ngoài */
+  white-space: nowrap; /* Ngăn chặn xuống dòng */
+  text-overflow: ellipsis; /* Hiển thị dấu chấm (...) nếu văn bản bị cắt bớt */
+}
+
+.job-card img {
+  max-height: 150px; /* Giới hạn kích thước của ảnh */
+  object-fit: cover; /* Đảm bảo ảnh không bị méo khi thay đổi kích thước */
+}

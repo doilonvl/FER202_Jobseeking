@@ -10,25 +10,23 @@ import { useParams } from 'react-router-dom';
 
 const MyResume = () => {
     const [loading, setLoading] = useState(true);
-    const [resumeData, setResumeData] = useState(null);
-    const [user, setUser] = useState();
+    const [resumeData, setResumeData] = useState();
+    const [user, setUser] = useState([]);
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-  const {id} = useParams()
+  const {slug} = useParams()
 
     const fetchCVByUserID = async () => {
         try {
-            const response = await axios.get(`http://localhost:9999/CV?userId=`+id);
-            setResumeData(response.data);
-            const userData = JSON.parse(localStorage.getItem("user"));
-        setUser(response.data);
-        console.log(user);
-        console.log('hello')
-        console.log('CV:', resumeData);
-
-        console.log('nhu lol');
+            axios
+            .get(`http://localhost:9999/CV?userId=${slug}`)
+            .then(res => {
+                setResumeData(res.data[0]);
+            })
+            .catch(err => console.log(err))
+            
         } catch (error) {
             console.error('Error fetching data:', error);
         } finally {
@@ -38,8 +36,8 @@ const MyResume = () => {
 
     useEffect(() => {
         fetchCVByUserID();
-    }, []); // Empty dependency array means this effect runs only once after the initial render
-   
+    }, []); 
+
     const formatDate = (dateString) => {
         const date = new Date(dateString);
         return `${date.toLocaleString('default', { month: 'short' })} ${date.getFullYear()}`;
@@ -50,7 +48,7 @@ const MyResume = () => {
 
     return (
         <Container>
-            {resumeData ? (
+         
                 <>
                     <Row className="avatar">
                         <Col>
@@ -59,21 +57,21 @@ const MyResume = () => {
                     </Row>
                     <Row className="name">
                         <Col>
-                            <h1>{resumeData.basicInformation.fullName}</h1>
-                            <div className="specialize">{resumeData.basicInformation.careerObjective}</div>
+                            <h1>{resumeData?.basicInformation.fullName}</h1>
+                            <div className="specialize">{resumeData?.basicInformation?.careerObjective}</div>
                             <ListGroup className="contact">
-                                <ListGroup.Item><span>P</span> {resumeData.basicInformation.phone}</ListGroup.Item>
-                                <ListGroup.Item><span>E</span> {resumeData.basicInformation.fullName}</ListGroup.Item>
-                                <ListGroup.Item><span>W</span> lundevweb.com</ListGroup.Item>
+                                <ListGroup.Item><span>P</span> {resumeData?.basicInformation?.phone}</ListGroup.Item>
+                                <ListGroup.Item><span>E</span> {resumeData?.basicInformation?.fullName}</ListGroup.Item>
+                                <ListGroup.Item><span>W</span> Fer202.com</ListGroup.Item>
                             </ListGroup>
                         </Col>
                     </Row>
                     <Row className="info">
                         <Col>
                             <ul>
-                                <li>From <b>{resumeData.education.university}</b> - VietNam</li>
-                                <li>{resumeData.education.graduationYear} - {resumeData.education.graduationYear + 5}</li>
-                                <li>{resumeData.education.degree}</li>
+                                <li>From <b>{resumeData?.education?.university}</b> - VietNam</li>
+                                <li>{resumeData?.education?.graduationYear} - {resumeData?.education?.graduationYear + 5}</li>
+                                <li>{resumeData?.education?.degree}</li>
                             </ul>
                         </Col>
                     </Row>
@@ -89,18 +87,18 @@ const MyResume = () => {
                         <Col>
                             <h2>EXPERIENCE</h2>
                             <ul>
-                                <li> Position: <b>{resumeData.workExperience.position}</b></li>
+                                <li> Position: <b>{resumeData?.position}</b></li>
                                 <li>
-                                    {resumeData.workExperience.startDate && resumeData.workExperience.endDate ? (
+                                    {resumeData?.workExperience?.startDate && resumeData?.workExperience?.endDate ? (
                                         <>
-                                            <span>Start Date: {formatDate(resumeData.workExperience.startDate)} </span><br />
-                                            <span>End Date: {formatDate(resumeData.workExperience.endDate)}</span>
+                                            <span>Start Date: {formatDate(resumeData?.workExperience?.startDate)} </span><br />
+                                            <span>End Date: {formatDate(resumeData?.workExperience?.endDate)}</span>
                                         </>
                                     ) : (
                                         "No dates available"
                                     )}
                                 </li>
-                                <li>From <b>{resumeData.workExperience.company}</b> </li>
+                                <li>From <b>{resumeData?.workExperience?.company}</b> </li>
                             </ul>
                         </Col>
                     </Row>
@@ -108,11 +106,11 @@ const MyResume = () => {
                         <Col>
                             <ul>
                                 <h2>Technical Skills:</h2>
-                                {resumeData.skills.technicalSkills.map((skill, index) => (
+                                {resumeData?.skills?.technicalSkills?.map((skill, index) => (
                                     <li key={index}>{skill}</li>
                                 ))}
                                 <h2>Soft Skills:</h2>
-                                {resumeData.skills.softSkills.map((skill, index) => (
+                                {resumeData?.skills?.softSkills?.map((skill, index) => (
                                     <li key={index}>{skill}</li>
                                 ))}
                             </ul>
@@ -152,14 +150,7 @@ const MyResume = () => {
     </>
   
                 </>
-            ) : (
-                <div>
-
-                
-                <div>No CV available</div>
-               
-                </div>
-            )}
+           
         </Container>
     );
 };
