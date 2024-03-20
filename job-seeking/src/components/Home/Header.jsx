@@ -14,14 +14,15 @@ export default function Header() {
   useEffect(() => {
     const userData = JSON.parse(localStorage.getItem("user"));
     setUser(userData);
-
-    axios
-    .get(`http://localhost:9999/CV?userId=${user?.id}`)
-    .then(res => {
-      const size = res.data.length;
-      size === 0 ? setIsCreate(false):setIsCreate(true);
-    })
-    .catch(err => console.log(err))
+    if(userData?.id){
+        axios
+      .get(`http://localhost:9999/CV?userId=${userData?.id}`)
+      .then(res => {
+        const size = res.data.length;
+        size === 0 ? setIsCreate(false):setIsCreate(true);
+      })
+      .catch(err => console.log(err))
+    }
 
   }, []);
 
@@ -47,11 +48,10 @@ export default function Header() {
       </div>
       <nav className="nav-links">
         <Link to="/">Home</Link>
-        {isCreate ?
+        {user?.id === undefined ? <Link to="/login">CV</Link> : (isCreate ?
           <Link to={`/MyResume/${user?.id}`}>CV</Link>
         :
-        <Link to={`addCv`}>CV</Link>
-      }
+        <Link to={`addCv`}>CV</Link>)}
         <Link to="/">Recruitment company</Link>
         <Link to="/job">Job</Link>
         <Link to="/">Job opportunities</Link>
