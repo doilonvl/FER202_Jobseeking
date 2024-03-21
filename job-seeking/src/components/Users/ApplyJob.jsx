@@ -13,7 +13,14 @@ const ApplyJob = () => {
   const [editedStatus, setEditedStatus] = useState("");
   const [selectedJobId, setSelectedJobId] = useState(null);
   const [alertMessage, setAlertMessage] = useState("");
+  const [userAll, setUserAll] = useState(null);
 
+  useEffect(() => {
+    fetch('http://localhost:9999/Users')
+      .then(response => response.json())
+      .then(data => setUserAll(data))
+      .catch(error => console.error('Error fetching data:', error));
+  }, []);
   useEffect(() => {
     const userData = JSON.parse(localStorage.getItem("user"));
     setUser(userData);
@@ -100,6 +107,7 @@ const ApplyJob = () => {
                       <img src={job.image} alt="" />
                     </a>
                   )}
+                  <p>Apply by: {userAll && userAll.find((u)=>u?.id === ja?.userId)?.username}</p>
                   <p>{job?.industry}</p>
                   <div className="user-detail">
                     <a className="size-img">Salary: {job?.salaryRange}</a>

@@ -183,8 +183,8 @@ const JobDetail = () => {
             <Card.Body>
               <Card.Title>Personal CV</Card.Title>
               <Form>
-                {console.log(resumeData !== null ? resumeData?.basicInformation : "")}
-                {resumeData !== null ? (
+                {console.log(resumeData && resumeData?.basicInformation?.fullName)}
+                {resumeData && (
                   <>
                     <Form.Group>
                       <Form.Label>
@@ -202,8 +202,6 @@ const JobDetail = () => {
                       </Form.Label>
                     </Form.Group>
                   </>
-                ) : (
-                  "Loading..."
                 )}
               </Form>
             </Card.Body>

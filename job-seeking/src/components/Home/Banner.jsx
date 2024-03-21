@@ -31,7 +31,7 @@ const Banner = () => {
         </Link>
       </div>
       <div className="banner-image">
-        <img src="/img/Designer.png" alt="Banner" style={{marginLeft:"10%", marginTop:"20%"}}/>
+        <img src="/img/Traveller1.png" alt="Banner"/>
       </div>
     </div>
   );

@@ -11,7 +11,8 @@ function JobList() {
     jobType: '',
     salaryRange: ''
   });
-
+  const [filteredJobs, setFilteredJobs] = useState([]);
+  const [noJobsFound, setNoJobsFound] = useState(false);
   useEffect(() => {
     fetch('http://localhost:9999/Jobs')
       .then(response => response.json())
@@ -19,6 +20,15 @@ function JobList() {
       .catch(error => console.error('Error fetching data:', error));
   }, []);
 
+  useEffect(() => {
+    const filtered = jobs.filter(filterJobs);
+    setFilteredJobs(filtered);
+    if (filtered.length === 0) {
+      setNoJobsFound(true);
+    } else {
+      setNoJobsFound(false);
+    }
+  }, [filter, jobs]);
   const handleFilterChange = (event) => {
     const { name, value } = event.target;
     setFilter(prevFilter => ({ ...prevFilter, [name]: value }));
@@ -122,13 +132,17 @@ function JobList() {
         </Row>
       </Form>
 
-      <Row className="job-cards">
-        {jobs.filter(filterJobs).map(job => (
-          <Col key={job.id} xs={12} sm={6} md={4} lg={0}>
-            <JobCard job={job} />
-          </Col>
-        ))}
-      </Row>
+      {noJobsFound ? (
+        <div className="text-center">Không tìm thấy công việc phù hợp.</div>
+      ) : (
+        <Row className="job-cards">
+          {filteredJobs.map(job => (
+            <Col key={job.id} xs={12} sm={6} md={4} lg={0}>
+              <JobCard job={job} />
+            </Col>
+          ))}
+        </Row>
+      )}
     </div>
   );
 }

@@ -111,13 +111,14 @@
       "address": "123 Maple St Anytown"
     },
     {
-      "username": "sdas",
+      "username": "ad",
       "password": "Doilonvl69",
-      "email": "thopn@fe.edu.vn",
+      "email": "a@gmail.com",
       "roleId": 2,
       "id": 12,
       "avatar": "",
-      "phoneNumber": "09090909090"
+      "phoneNumber": "09090909090",
+      "address": "Ha noi"
     }
   ],
   "Roles": [
@@ -562,6 +563,11 @@
       "userId": 11,
       "jobId": 1,
       "id": 8
+    },
+    {
+      "userId": 12,
+      "jobId": 1,
+      "id": 9
     }
   ],
   "JobApplications": [
@@ -620,6 +626,13 @@
       "applicationDate": "3/21/2024",
       "status": "Pending",
       "id": 8
+    },
+    {
+      "userId": 12,
+      "jobId": "1",
+      "applicationDate": "3/21/2024",
+      "status": "Pending",
+      "id": 9
     }
   ],
   "Notifications": [

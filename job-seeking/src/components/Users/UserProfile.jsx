@@ -129,21 +129,20 @@ const UserProfile = () => {
   };
   const handleUnsaveJob = (sjobId) => {
     fetch(`http://localhost:9999/SavedJobs/${sjobId}`, {
-      method: 'DELETE'
+      method: "DELETE",
     })
-      .then(response => {
+      .then((response) => {
         if (response.ok) {
-          console.log('Job successfully unsaved.');
-          setSavedJobs(savedJobs.filter(savedJob => savedJob.id !== sjobId));
+          console.log("Job successfully unsaved.");
+          setSavedJobs(savedJobs.filter((savedJob) => savedJob.id !== sjobId));
         } else {
-          console.error('Failed to unsave job.');
+          console.error("Failed to unsave job.");
         }
       })
-      .catch(error => {
-        console.error('Error while trying to unsave job:', error);
+      .catch((error) => {
+        console.error("Error while trying to unsave job:", error);
       });
   };
-  
 
   return (
     <Container style={{ marginTop: "2%" }} className="profile_all">
@@ -242,7 +241,7 @@ const UserProfile = () => {
                             }
                           />
                         </div>
-                        <div className="form-group">
+                        {/* <div className="form-group">
                           <label htmlFor="Education">Education</label>
                           <input
                             type="text"
@@ -252,7 +251,7 @@ const UserProfile = () => {
                             readOnly={!editMode}
                             placeholder="Enter your education"
                           />
-                        </div>
+                        </div> */}
                       </form>
                     </div>
                     <div className="col-md-6">
@@ -286,7 +285,7 @@ const UserProfile = () => {
                             }
                           />
                         </div>
-                        <div className="form-group">
+                        {/* <div className="form-group">
                           <label htmlFor="Experience">Experience</label>
                           <input
                             type="text"
@@ -296,7 +295,7 @@ const UserProfile = () => {
                             readOnly={!editMode}
                             placeholder="Enter your experience"
                           />
-                        </div>
+                        </div> */}
                       </form>
                     </div>
                   </div>
@@ -315,25 +314,35 @@ const UserProfile = () => {
           </div>
           {showSavedJobs && (
             <div className="row">
-              {savedJobs !== null  &&  <h2>Saved Jobs</h2>}
-                  {savedJobs.map((savedJob) => {
-                    const job = jobs.find((job) => job?.id === savedJob?.jobId);
-                    return (
-                      <div key={savedJob?.id} className="col-md-3">
-                        <Card className="col-md-12" style={{ width: "18rem" }}>
-                          <Card.Body>
-                          <Card.Img variant="top" src={job?.image} alt={job?.title} />
-                            <Card.Title>{job?.title}</Card.Title>
-                            <Card.Text>{job?.companyName}</Card.Text>
-                            <Link to={`/job/${job?.id}`}>
-                              <Button variant="info">View Details</Button>
-                            </Link>
-                            <Button style={{float:"right"}} onClick={() => handleUnsaveJob(savedJob?.id)}  variant="danger">Unsave Job</Button>
-                          </Card.Body>
-                        </Card>
-                      </div>
-                    );
-                  })}
+              {savedJobs !== null ? <h2>Saved Jobs</h2> : "No Saved Jobs"}
+              {savedJobs.map((savedJob) => {
+                const job = jobs.find((job) => job?.id === savedJob?.jobId);
+                return (
+                  <div key={savedJob?.id} className="col-md-3">
+                    <Card className="col-md-12" style={{ width: "18rem" }}>
+                      <Card.Body>
+                        <Card.Img
+                          variant="top"
+                          src={job?.image}
+                          alt={job?.title}
+                        />
+                        <Card.Title>{job?.title}</Card.Title>
+                        <Card.Text>{job?.companyName}</Card.Text>
+                        <Link to={`/job/${job?.id}`}>
+                          <Button variant="info">View Details</Button>
+                        </Link>
+                        <Button
+                          style={{ float: "right" }}
+                          onClick={() => handleUnsaveJob(savedJob?.id)}
+                          variant="danger"
+                        >
+                          Unsave Job
+                        </Button>
+                      </Card.Body>
+                    </Card>
+                  </div>
+                );
+              })}
             </div>
           )}
         </div>
