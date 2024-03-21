@@ -266,38 +266,6 @@
       "id": 7
     },
     {
-      "userId": 12,
-      "basicInformation": {
-        "fullName": "trần Thanh Hải 123",
-        "email": "gvtvjetnam@gmail.com",
-        "phone": "0912320855",
-        "careerObjective": "asss"
-      },
-      "education": {
-        "degree": "Soft wares",
-        "university": "FPT University `1223",
-        "graduationYear": "2021"
-      },
-      "workExperience": {
-        "company": "Giao tan ",
-        "position": "20122",
-        "startDate": "2024-03-22",
-        "endDate": "2024-03-23"
-      },
-      "skills": {
-        "technicalSkills": [
-          "giao tan ",
-          " giao thuy ",
-          " nam đinh "
-        ],
-        "softSkills": [
-          "Bia",
-          " Game"
-        ]
-      },
-      "id": 8
-    },
-    {
       "userId": 11,
       "basicInformation": {
         "fullName": "Admin",
@@ -571,32 +539,29 @@
   ],
   "SavedJobs": [
     {
-      "id": 1,
-      "jobId": 2
-    },
-    {
-      "id": 2,
-      "jobId": 3
-    },
-    {
-      "id": 3,
-      "jobId": 4
-    },
-    {
       "id": 4,
-      "jobId": 5
+      "jobId": 5,
+      "userId": 8
     },
     {
       "id": 5,
-      "jobId": 6
+      "jobId": 6,
+      "userId": 2
     },
     {
       "id": 6,
-      "jobId": 7
+      "jobId": 7,
+      "userId": 5
     },
     {
       "id": 7,
-      "jobId": 8
+      "jobId": 8,
+      "userId": 4
+    },
+    {
+      "userId": 11,
+      "jobId": 1,
+      "id": 8
     }
   ],
   "JobApplications": [
@@ -651,17 +616,10 @@
     },
     {
       "userId": 11,
-      "jobId": "2",
-      "applicationDate": "3/20/2024",
-      "status": "Pending",
-      "id": 8
-    },
-    {
-      "userId": 11,
-      "jobId": "3",
+      "jobId": "5",
       "applicationDate": "3/21/2024",
       "status": "Pending",
-      "id": 9
+      "id": 8
     }
   ],
   "Notifications": [

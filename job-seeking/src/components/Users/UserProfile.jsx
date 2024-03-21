@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Container } from "react-bootstrap";
+import { Button, Card, Container } from "react-bootstrap";
 import axios from "axios";
 import Swal from "sweetalert2";
 import "../Styles/Profile.css";
@@ -7,12 +7,23 @@ import Login from "./Login";
 import { Link } from "react-router-dom";
 
 const UserProfile = () => {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState("");
   const [editMode, setEditMode] = useState(false);
+  const [savedJobs, setSavedJobs] = useState([]);
+  const [showSavedJobs, setShowSavedJobs] = useState(false);
+  const [jobs, setJobs] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:9999/Jobs")
+      .then((response) => response.json())
+      .then((data) => setJobs(data))
+      .catch((error) => console.error("Error fetching data:", error));
+  }, []);
 
   useEffect(() => {
     const userData = JSON.parse(localStorage.getItem("user"));
     setUser(userData);
+    fetchSavedJobs(userData.id);
   }, []);
 
   const handleEditClick = () => {
@@ -29,14 +40,21 @@ const UserProfile = () => {
       const reader = new FileReader();
       reader.onload = function (event) {
         setUser({ ...user, avatar: event.target.result });
-        localStorage.setItem("user", JSON.stringify({ ...user, avatar: event.target.result }));
-        axios.patch(`http://localhost:9999/Users/${user.id}`, { ...user, avatar: event.target.result })
+        localStorage.setItem(
+          "user",
+          JSON.stringify({ ...user, avatar: event.target.result })
+        );
+        axios
+          .patch(`http://localhost:9999/Users/${user.id}`, {
+            ...user,
+            avatar: event.target.result,
+          })
           .then(() => {
             Swal.fire({
               icon: "success",
               title: "Avatar updated successfully!",
               showConfirmButton: false,
-              timer: 1500
+              timer: 1500,
             });
           })
           .catch((error) => {
@@ -45,7 +63,7 @@ const UserProfile = () => {
               icon: "error",
               title: "Oops...",
               text: "An error occurred while updating your avatar. Please try again later.",
-              confirmButtonText: "OK"
+              confirmButtonText: "OK",
             });
           });
       };
@@ -62,7 +80,7 @@ const UserProfile = () => {
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, save changes"
+      confirmButtonText: "Yes, save changes",
     }).then(async (result) => {
       if (result.isConfirmed) {
         if (user.username === "" || user.email === "") {
@@ -70,11 +88,11 @@ const UserProfile = () => {
             icon: "error",
             title: "Oops...",
             text: "Please fill in all the required fields.",
-            confirmButtonText: "OK"
+            confirmButtonText: "OK",
           });
           return;
         }
-        
+
         try {
           await axios.patch(`http://localhost:9999/Users/${user.id}`, user);
           setEditMode(false);
@@ -83,7 +101,7 @@ const UserProfile = () => {
             icon: "success",
             title: "Profile updated successfully!",
             showConfirmButton: false,
-            timer: 1500
+            timer: 1500,
           });
         } catch (error) {
           console.error("Error submitting data:", error);
@@ -91,11 +109,39 @@ const UserProfile = () => {
             icon: "error",
             title: "Oops...",
             text: "An error occurred while updating your profile. Please try again later.",
-            confirmButtonText: "OK"
+            confirmButtonText: "OK",
           });
         }
       }
     });
+  };
+
+  const fetchSavedJobs = async (userId) => {
+    try {
+      const response = await axios.get(
+        `http://localhost:9999/SavedJobs?userId=${userId}`
+      );
+      setSavedJobs(response.data);
+      setShowSavedJobs(true);
+    } catch (error) {
+      console.error("Error fetching saved jobs:", error);
+    }
+  };
+  const handleUnsaveJob = (sjobId) => {
+    fetch(`http://localhost:9999/SavedJobs/${sjobId}`, {
+      method: 'DELETE'
+    })
+      .then(response => {
+        if (response.ok) {
+          console.log('Job successfully unsaved.');
+          setSavedJobs(savedJobs.filter(savedJob => savedJob.id !== sjobId));
+        } else {
+          console.error('Failed to unsave job.');
+        }
+      })
+      .catch(error => {
+        console.error('Error while trying to unsave job:', error);
+      });
   };
   
 
@@ -117,7 +163,10 @@ const UserProfile = () => {
                     {user.avatar !== null ? (
                       <img src={user.avatar} alt="" />
                     ) : (
-                      <img src="https://parade.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTk0OTMxNTc0Njc1NzQzOTA2/avatar-3-evil-navi-james-cameron.jpg" alt="" />
+                      <img
+                        src="https://parade.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTk0OTMxNTc0Njc1NzQzOTA2/avatar-3-evil-navi-james-cameron.jpg"
+                        alt=""
+                      />
                     )}
                   </a>
                 </div>
@@ -135,26 +184,29 @@ const UserProfile = () => {
                     </a>
                   </li>
                   <li>
-                    <Link to={"/MyResume/" + user.id}>
-                      {" "}
-                      <i className="fa fa-user"></i> My CV
-                    </Link>
-                  </li>
-                  <li>
                     <Link to="/job/job_apply">
                       {" "}
                       <i className="fa fa-pencil"></i> Job apply
                     </Link>
                   </li>
                 </ul>
-                <input type="file" id="fileInput" style={{ display: "none" }} onChange={handleImageChange} accept="image/*" />
+                <input
+                  type="file"
+                  id="fileInput"
+                  style={{ display: "none" }}
+                  onChange={handleImageChange}
+                  accept="image/*"
+                />
               </div>
             </div>
-            <div className="profile-info col-md-9" style={{ borderRadius: "6px" }}>
+            <div
+              className="profile-info col-md-9"
+              style={{ borderRadius: "6px" }}
+            >
               <div className="panel">
                 <div className="bio-graph-heading">
-                  Aliquam ac magna metus. Nam sed arcu non tellus fringilla fringilla ut vel ispum. Aliquam ac magna
-                  metus.
+                  Aliquam ac magna metus. Nam sed arcu non tellus fringilla
+                  fringilla ut vel ispum. Aliquam ac magna metus.
                 </div>
                 <div className="panel-body bio-graph-info">
                   <h1>User profile</h1>
@@ -171,7 +223,9 @@ const UserProfile = () => {
                             value={user.username}
                             readOnly={!editMode}
                             placeholder="Enter your name"
-                            onChange={(e) => setUser({ ...user, username: e.target.value })}
+                            onChange={(e) =>
+                              setUser({ ...user, username: e.target.value })
+                            }
                           />
                         </div>
                         <div className="form-group">
@@ -183,7 +237,9 @@ const UserProfile = () => {
                             value={user.phoneNumber}
                             readOnly={!editMode}
                             placeholder="Enter your phone number"
-                            onChange={(e) => setUser({ ...user, phoneNumber: e.target.value })}
+                            onChange={(e) =>
+                              setUser({ ...user, phoneNumber: e.target.value })
+                            }
                           />
                         </div>
                         <div className="form-group">
@@ -211,7 +267,9 @@ const UserProfile = () => {
                             value={user.email}
                             readOnly={!editMode}
                             placeholder="Enter your email"
-                            onChange={(e) => setUser({ ...user, email: e.target.value })}
+                            onChange={(e) =>
+                              setUser({ ...user, email: e.target.value })
+                            }
                           />
                         </div>
                         <div className="form-group">
@@ -223,7 +281,9 @@ const UserProfile = () => {
                             value={user.address}
                             readOnly={!editMode}
                             placeholder="Enter your address"
-                            onChange={(e) => setUser({ ...user, address: e.target.value })}
+                            onChange={(e) =>
+                              setUser({ ...user, address: e.target.value })
+                            }
                           />
                         </div>
                         <div className="form-group">
@@ -234,14 +294,18 @@ const UserProfile = () => {
                             id="name"
                             required
                             readOnly={!editMode}
-                            placeholder="Enter your experiance"
+                            placeholder="Enter your experience"
                           />
                         </div>
                       </form>
                     </div>
                   </div>
                   {editMode && (
-                    <button type="submit" className="btn btn-primary" onClick={handleSubmit}>
+                    <button
+                      type="submit"
+                      className="btn btn-primary"
+                      onClick={handleSubmit}
+                    >
                       Submit
                     </button>
                   )}
@@ -249,6 +313,29 @@ const UserProfile = () => {
               </div>
             </div>
           </div>
+          {showSavedJobs && (
+            <div className="row">
+              {savedJobs !== null  &&  <h2>Saved Jobs</h2>}
+                  {savedJobs.map((savedJob) => {
+                    const job = jobs.find((job) => job?.id === savedJob?.jobId);
+                    return (
+                      <div key={savedJob?.id} className="col-md-3">
+                        <Card className="col-md-12" style={{ width: "18rem" }}>
+                          <Card.Body>
+                          <Card.Img variant="top" src={job?.image} alt={job?.title} />
+                            <Card.Title>{job?.title}</Card.Title>
+                            <Card.Text>{job?.companyName}</Card.Text>
+                            <Link to={`/job/${job?.id}`}>
+                              <Button variant="info">View Details</Button>
+                            </Link>
+                            <Button style={{float:"right"}} onClick={() => handleUnsaveJob(savedJob?.id)}  variant="danger">Unsave Job</Button>
+                          </Card.Body>
+                        </Card>
+                      </div>
+                    );
+                  })}
+            </div>
+          )}
         </div>
       )}
     </Container>

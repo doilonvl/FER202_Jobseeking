@@ -49,12 +49,12 @@ export default function Header() {
       <nav className="nav-links">
         <Link to="/">Home</Link>
         {user?.id === undefined ? <Link to="/login">CV</Link> : (isCreate ?
-          <Link to={`/MyResume/${user?.id}`}>CV</Link>
+          <Link to={`/addCv`}>CV</Link>
         :
-        <Link to={`addCv`}>CV</Link>)}
-        <Link to="/">Recruitment company</Link>
+        <Link to={`/addCv`}>CV</Link>)}
+        {/* <Link to="/">Recruitment company</Link> */}
         <Link to="/job">Job</Link>
-        <Link to="/">Job opportunities</Link>
+        {/* <Link to="/">Job opportunities</Link> */}
       </nav>
       <div className="auth-links">
         {user == null ? (
@@ -76,6 +76,9 @@ export default function Header() {
                 </Link>
                 <Link className="text-dark" to="/profile">
                   User Profile
+                </Link>
+                <Link className="text-dark" to={"/MyResume/" + user.id}>
+                 My CV
                 </Link>
               </div>
             )}

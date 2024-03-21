@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Card, Button, Row, Col, Form } from 'react-bootstrap';
 import { saveJob, unsaveJob } from "../api/jobs.api";
-import { Link } from 'react-router-dom';
-
+import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 function JobList() {
   const [jobs, setJobs] = useState([]);
   const [filter, setFilter] = useState({
@@ -134,6 +134,35 @@ function JobList() {
 }
 
 function JobCard({ job }) {
+  const [user, setUser] = useState("");
+  useEffect(() => {
+    const userData = JSON.parse(localStorage.getItem("user"));
+    setUser(userData);
+  }, []);
+  const nav = useNavigate()
+  const handleSaveJob = async () => {
+    if(user === null) {
+      nav("/login")
+    }
+    try {
+        const userId = user.id;
+        const jobId = job.id;
+
+        const response = await axios.get(`http://localhost:9999/SavedJobs?userId=${userId}&jobId=${jobId}`);
+        
+        if (response.data.length > 0) {
+            alert('Job already saved!');
+            return; 
+        }
+
+        await axios.post(`http://localhost:9999/SavedJobs`, { userId, jobId });
+        alert('Job saved successfully!');
+    } catch (error) {
+        console.error('Error saving job:', error);
+        alert('You need account to save job.');
+    }
+};
+
   return (
     <Card className="job-card mb-4">
       <Card.Img variant="top" src={job.image} alt={job.title} />
@@ -144,7 +173,10 @@ function JobCard({ job }) {
         <Card.Text className="job-salary">{job.salaryRange}</Card.Text>
         <Card.Text className="job-type">{job.jobType}</Card.Text>
         <Link to={`/job/${job.id}`}>
-          <Button variant="primary">Xem chi tiết</Button>
+          <Button variant="info">Detail</Button>
+        </Link>
+        <Link>
+          <Button variant="warning" onClick={handleSaveJob} style={{float:"right"}}>Save job</Button>
         </Link>
       </Card.Body>
     </Card>

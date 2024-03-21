@@ -12,7 +12,7 @@ import {
 } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
-import Swal from 'sweetalert2';
+import Swal from "sweetalert2";
 
 const JobDetail = () => {
   const { jId } = useParams();
@@ -21,14 +21,16 @@ const JobDetail = () => {
   const [resumeData, setResumeData] = useState(null);
   const [user, setUser] = useState("");
   const [error, setError] = useState(null);
-    const nav= useNavigate()
+  const nav = useNavigate();
   useEffect(() => {
     const userData = JSON.parse(localStorage.getItem("user"));
     setUser(userData);
   }, []);
   const fetchCVByUserID = async () => {
     try {
-      const response = await axios.get(`http://localhost:9999/CV?userId=${user?.id}`);
+      const response = await axios.get(
+        `http://localhost:9999/CV?userId=${user.id}`
+      );
       console.log(response.data);
       setResumeData(response.data);
     } catch (error) {
@@ -50,14 +52,16 @@ const JobDetail = () => {
 
   const handleApplyNow = async () => {
     try {
-      const response = await axios.get(`http://localhost:9999/JobApplications?userId=${user.id}&jobId=${jId}`);
+      const response = await axios.get(
+        `http://localhost:9999/JobApplications?userId=${user.id}&jobId=${jId}`
+      );
       if (response.data.length > 0) {
         Swal.fire({
-          icon: 'warning',
-          title: 'CV already applied for this job',
-          text: 'You have already applied for this job.',
-          confirmButtonColor: '#3085d6',
-          confirmButtonText: 'OK'
+          icon: "warning",
+          title: "CV already applied for this job",
+          text: "You have already applied for this job.",
+          confirmButtonColor: "#3085d6",
+          confirmButtonText: "OK",
         });
       } else {
         const currentDate = new Date().toLocaleDateString("en-US");
@@ -70,11 +74,11 @@ const JobDetail = () => {
         await axios.post("http://localhost:9999/JobApplications", postData);
         setShowModal(false);
         Swal.fire({
-          icon: 'success',
-          title: 'CV submitted successfully!',
-          text: 'Your CV has been submitted successfully.',
-          confirmButtonColor: '#3085d6',
-          confirmButtonText: 'OK'
+          icon: "success",
+          title: "CV submitted successfully!",
+          text: "Your CV has been submitted successfully.",
+          confirmButtonColor: "#3085d6",
+          confirmButtonText: "OK",
         });
       }
     } catch (error) {
@@ -82,20 +86,18 @@ const JobDetail = () => {
       setError(error);
     }
   };
-  
 
   const handleShowModal = () => {
-    if(user){
-        setShowModal(true);
-    }else{
-        nav("/login")
+    if (user) {
+      setShowModal(true);
+    } else {
+      nav("/login");
     }
-  }
+  };
 
   const handleCloseModal = () => {
     setShowModal(false);
   };
-
 
   return (
     <Container fluid style={{ marginTop: "1%", width: "90%" }}>
@@ -181,18 +183,28 @@ const JobDetail = () => {
             <Card.Body>
               <Card.Title>Personal CV</Card.Title>
               <Form>
-                {resumeData?.basicInformation !== null ? (<>
-                    <Form.Group controlId="formFullName">
-                  <Form.Label>Full Name: {resumeData?.basicInformation?.fullName}</Form.Label>
-                </Form.Group>
-                <Form.Group controlId="formPhoneNumber">
-                  <Form.Label>Phone Number: {resumeData?.basicInformation?.phone}</Form.Label>
-                </Form.Group>
-                </>) : ""}
-                
-                <Form.Group controlId="formDegree">
-                  <Form.Label>Degree: {resumeData?.education?.degree}</Form.Label>
-                </Form.Group>
+                {console.log(resumeData !== null ? resumeData?.basicInformation : "")}
+                {resumeData !== null ? (
+                  <>
+                    <Form.Group>
+                      <Form.Label>
+                        Full Name: {resumeData?.basicInformation?.fullName}
+                      </Form.Label>
+                    </Form.Group>
+                    <Form.Group>
+                      <Form.Label>
+                        Phone Number: {resumeData?.basicInformation?.phone}
+                      </Form.Label>
+                    </Form.Group>
+                    <Form.Group>
+                      <Form.Label>
+                        Degree: {resumeData?.education?.degree}
+                      </Form.Label>
+                    </Form.Group>
+                  </>
+                ) : (
+                  "Loading..."
+                )}
               </Form>
             </Card.Body>
           </Card>
@@ -210,7 +222,9 @@ const JobDetail = () => {
           <Button variant="secondary" onClick={handleCloseModal}>
             Close
           </Button>
-          <Button variant="success" onClick={handleApplyNow}>Submit CV</Button>
+          <Button variant="success" onClick={handleApplyNow}>
+            Submit CV
+          </Button>
         </Modal.Footer>
       </Modal>
     </Container>
