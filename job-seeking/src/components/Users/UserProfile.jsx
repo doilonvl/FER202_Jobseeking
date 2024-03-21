@@ -227,7 +227,7 @@ const UserProfile = () => {
                           />
                         </div>
                         <div className="form-group">
-                          <label htmlFor="Experiance">Experiance</label>
+                          <label htmlFor="Experience">Experience</label>
                           <input
                             type="text"
                             className="form-control"

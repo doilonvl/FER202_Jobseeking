@@ -29,8 +29,8 @@ export default function Header() {
   const handleLogout = () => {
     localStorage.removeItem("user");
     setUser(null);
-    window.location.reload()
     nav("/login");
+    window.location.reload()
   };
 
   const toggleMenu = () => {

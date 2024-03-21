@@ -114,7 +114,7 @@
       "username": "sdas",
       "password": "Doilonvl69",
       "email": "thopn@fe.edu.vn",
-      "roleId": 3,
+      "roleId": 2,
       "id": 12,
       "avatar": "",
       "phoneNumber": "09090909090"
@@ -648,6 +648,20 @@
       "jobId": 11,
       "applicationDate": "02/24/2024",
       "status": "Pending"
+    },
+    {
+      "userId": 11,
+      "jobId": "2",
+      "applicationDate": "3/20/2024",
+      "status": "Pending",
+      "id": 8
+    },
+    {
+      "userId": 11,
+      "jobId": "3",
+      "applicationDate": "3/21/2024",
+      "status": "Pending",
+      "id": 9
     }
   ],
   "Notifications": [

@@ -19,7 +19,7 @@ const JobDetail = () => {
   const [jobDetail, setJobDetail] = useState(null);
   const [showModal, setShowModal] = useState(false);
   const [resumeData, setResumeData] = useState(null);
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState("");
   const [error, setError] = useState(null);
     const nav= useNavigate()
   useEffect(() => {
